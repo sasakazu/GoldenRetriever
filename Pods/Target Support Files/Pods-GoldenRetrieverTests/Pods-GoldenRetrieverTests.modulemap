@@ -1,0 +1,6 @@
+framework module Pods_GoldenRetrieverTests {
+  umbrella header "Pods-GoldenRetrieverTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

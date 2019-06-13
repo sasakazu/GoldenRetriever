@@ -1,0 +1,6 @@
+framework module Pods_GoldenRetrieverUITests {
+  umbrella header "Pods-GoldenRetrieverUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

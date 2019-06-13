@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07E875C2016EC40E0E1A264A /* Pods_GoldenRetrieverTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E2097FB428DEBB84451021A /* Pods_GoldenRetrieverTests.framework */; };
+		6C003EC034D9990F3D458F9D /* Pods_GoldenRetrieverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21C7280A7D7FD51324EE312A /* Pods_GoldenRetrieverUITests.framework */; };
 		73F4E70B22B203560050F409 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4E70A22B203560050F409 /* AppDelegate.swift */; };
 		73F4E70D22B203560050F409 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4E70C22B203560050F409 /* ViewController.swift */; };
 		73F4E71022B203560050F409 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73F4E70E22B203560050F409 /* Main.storyboard */; };
@@ -14,6 +16,8 @@
 		73F4E71522B203570050F409 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73F4E71322B203570050F409 /* LaunchScreen.storyboard */; };
 		73F4E72022B203580050F409 /* GoldenRetrieverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4E71F22B203580050F409 /* GoldenRetrieverTests.swift */; };
 		73F4E72B22B203580050F409 /* GoldenRetrieverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4E72A22B203580050F409 /* GoldenRetrieverUITests.swift */; };
+		73F4E73922B205B60050F409 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73F4E73822B205B60050F409 /* GoogleService-Info.plist */; };
+		E0C3E17EAC6690BFF50D50DC /* Pods_GoldenRetriever.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D11D1B2EC6195AB8449C9B8 /* Pods_GoldenRetriever.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21C7280A7D7FD51324EE312A /* Pods_GoldenRetrieverUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoldenRetrieverUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AA9BD510D4934BAF4B29F62 /* Pods-GoldenRetriever.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoldenRetriever.debug.xcconfig"; path = "Target Support Files/Pods-GoldenRetriever/Pods-GoldenRetriever.debug.xcconfig"; sourceTree = "<group>"; };
+		597B82D371AB6D714BF58C18 /* Pods-GoldenRetrieverUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoldenRetrieverUITests.debug.xcconfig"; path = "Target Support Files/Pods-GoldenRetrieverUITests/Pods-GoldenRetrieverUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6D11D1B2EC6195AB8449C9B8 /* Pods_GoldenRetriever.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoldenRetriever.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F4E70722B203560050F409 /* GoldenRetriever.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldenRetriever.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F4E70A22B203560050F409 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73F4E70C22B203560050F409 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +55,12 @@
 		73F4E72622B203580050F409 /* GoldenRetrieverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoldenRetrieverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F4E72A22B203580050F409 /* GoldenRetrieverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenRetrieverUITests.swift; sourceTree = "<group>"; };
 		73F4E72C22B203580050F409 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73F4E73822B205B60050F409 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7E2097FB428DEBB84451021A /* Pods_GoldenRetrieverTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoldenRetrieverTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CEA95BE0D87910234D7A0F1 /* Pods-GoldenRetrieverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoldenRetrieverTests.debug.xcconfig"; path = "Target Support Files/Pods-GoldenRetrieverTests/Pods-GoldenRetrieverTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9DCD3172EB800E86096F04C6 /* Pods-GoldenRetrieverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoldenRetrieverTests.release.xcconfig"; path = "Target Support Files/Pods-GoldenRetrieverTests/Pods-GoldenRetrieverTests.release.xcconfig"; sourceTree = "<group>"; };
+		F16FC795631413300A713719 /* Pods-GoldenRetriever.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoldenRetriever.release.xcconfig"; path = "Target Support Files/Pods-GoldenRetriever/Pods-GoldenRetriever.release.xcconfig"; sourceTree = "<group>"; };
+		F9ACBDC05CEE73C6651E5AAF /* Pods-GoldenRetrieverUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoldenRetrieverUITests.release.xcconfig"; path = "Target Support Files/Pods-GoldenRetrieverUITests/Pods-GoldenRetrieverUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0C3E17EAC6690BFF50D50DC /* Pods_GoldenRetriever.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07E875C2016EC40E0E1A264A /* Pods_GoldenRetrieverTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C003EC034D9990F3D458F9D /* Pods_GoldenRetrieverUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +98,8 @@
 				73F4E71E22B203580050F409 /* GoldenRetrieverTests */,
 				73F4E72922B203580050F409 /* GoldenRetrieverUITests */,
 				73F4E70822B203560050F409 /* Products */,
+				C360547C2EEF1BF418D4749B /* Pods */,
+				8077B0B55F9D35130C5F4149 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +120,7 @@
 				73F4E70C22B203560050F409 /* ViewController.swift */,
 				73F4E70E22B203560050F409 /* Main.storyboard */,
 				73F4E71122B203570050F409 /* Assets.xcassets */,
+				73F4E73822B205B60050F409 /* GoogleService-Info.plist */,
 				73F4E71322B203570050F409 /* LaunchScreen.storyboard */,
 				73F4E71622B203570050F409 /* Info.plist */,
 			);
@@ -125,6 +145,29 @@
 			path = GoldenRetrieverUITests;
 			sourceTree = "<group>";
 		};
+		8077B0B55F9D35130C5F4149 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D11D1B2EC6195AB8449C9B8 /* Pods_GoldenRetriever.framework */,
+				7E2097FB428DEBB84451021A /* Pods_GoldenRetrieverTests.framework */,
+				21C7280A7D7FD51324EE312A /* Pods_GoldenRetrieverUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C360547C2EEF1BF418D4749B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3AA9BD510D4934BAF4B29F62 /* Pods-GoldenRetriever.debug.xcconfig */,
+				F16FC795631413300A713719 /* Pods-GoldenRetriever.release.xcconfig */,
+				8CEA95BE0D87910234D7A0F1 /* Pods-GoldenRetrieverTests.debug.xcconfig */,
+				9DCD3172EB800E86096F04C6 /* Pods-GoldenRetrieverTests.release.xcconfig */,
+				597B82D371AB6D714BF58C18 /* Pods-GoldenRetrieverUITests.debug.xcconfig */,
+				F9ACBDC05CEE73C6651E5AAF /* Pods-GoldenRetrieverUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73F4E72F22B203580050F409 /* Build configuration list for PBXNativeTarget "GoldenRetriever" */;
 			buildPhases = (
+				E768483F46C5E4B7430E5E74 /* [CP] Check Pods Manifest.lock */,
 				73F4E70322B203560050F409 /* Sources */,
 				73F4E70422B203560050F409 /* Frameworks */,
 				73F4E70522B203560050F409 /* Resources */,
+				A3B850C60E05AE35D20843C0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73F4E73222B203580050F409 /* Build configuration list for PBXNativeTarget "GoldenRetrieverTests" */;
 			buildPhases = (
+				7E1C55555DEB096CC64F15C8 /* [CP] Check Pods Manifest.lock */,
 				73F4E71722B203580050F409 /* Sources */,
 				73F4E71822B203580050F409 /* Frameworks */,
 				73F4E71922B203580050F409 /* Resources */,
@@ -167,6 +213,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73F4E73522B203580050F409 /* Build configuration list for PBXNativeTarget "GoldenRetrieverUITests" */;
 			buildPhases = (
+				4950B8EB25B1C48829DDA87F /* [CP] Check Pods Manifest.lock */,
 				73F4E72222B203580050F409 /* Sources */,
 				73F4E72322B203580050F409 /* Frameworks */,
 				73F4E72422B203580050F409 /* Resources */,
@@ -232,6 +279,7 @@
 				73F4E71522B203570050F409 /* LaunchScreen.storyboard in Resources */,
 				73F4E71222B203570050F409 /* Assets.xcassets in Resources */,
 				73F4E71022B203560050F409 /* Main.storyboard in Resources */,
+				73F4E73922B205B60050F409 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +298,103 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4950B8EB25B1C48829DDA87F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoldenRetrieverUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E1C55555DEB096CC64F15C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoldenRetrieverTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3B850C60E05AE35D20843C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoldenRetriever/Pods-GoldenRetriever-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoldenRetriever/Pods-GoldenRetriever-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E768483F46C5E4B7430E5E74 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoldenRetriever-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		73F4E70322B203560050F409 /* Sources */ = {
@@ -430,6 +575,7 @@
 		};
 		73F4E73022B203580050F409 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AA9BD510D4934BAF4B29F62 /* Pods-GoldenRetriever.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,6 +594,7 @@
 		};
 		73F4E73122B203580050F409 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F16FC795631413300A713719 /* Pods-GoldenRetriever.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +613,7 @@
 		};
 		73F4E73322B203580050F409 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CEA95BE0D87910234D7A0F1 /* Pods-GoldenRetrieverTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +635,7 @@
 		};
 		73F4E73422B203580050F409 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DCD3172EB800E86096F04C6 /* Pods-GoldenRetrieverTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +657,7 @@
 		};
 		73F4E73622B203580050F409 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 597B82D371AB6D714BF58C18 /* Pods-GoldenRetrieverUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +678,7 @@
 		};
 		73F4E73722B203580050F409 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9ACBDC05CEE73C6651E5AAF /* Pods-GoldenRetrieverUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
