@@ -22,13 +22,13 @@ class editProfile: UIViewController {
         
         if let user = user {
             
-            let email = user.email
+            let name = user.displayName
+           
+            nameTF.placeholder = name
             
-            print(email)
             
-        
-        
         }
+        
         
         
 
