@@ -11,11 +11,12 @@ import FirebaseAuth
 
 class login: UIViewController {
     
-    
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
-    
 
+
+    @IBOutlet weak var emailTF: UITextField!
+    @IBOutlet weak var passTF: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,18 +26,14 @@ class login: UIViewController {
     
     @IBAction func loginBtn(_ sender: Any) {
         
-        Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (authResult, error) in
-            
-            guard let user = authResult?.user else { return }
-    
-            
+        
+        Auth.auth().signIn(withEmail: emailTF.text!, password: passTF.text!) { (user, error) in
          
-            
         }
-    
-        
-        
     }
+    
+    
+   
     
 
 

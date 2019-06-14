@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import Firebase
+import FirebaseAuth
 
-class addPhoto: UIViewController {
+class addPhoto: UIViewController, UITextFieldDelegate {
+    
+    let ref = Database.database().reference()
     
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var friend1TF: UITextField!
@@ -16,14 +21,25 @@ class addPhoto: UIViewController {
     
     
 
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
     }
     
 
     @IBAction func saveBtn(_ sender: Any) {
+        
+        guard let text = nameTF.text else { return }
+  
+        self.ref.child((Auth.auth().currentUser?.uid)!).childByAutoId().setValue(["user": (Auth.auth().currentUser?.uid)!,"content": text, "date": ServerValue.timestamp()])
+        
+        self.navigationController?.popToRootViewController(animated: true)
+        
+   
+ 
     }
     
     
