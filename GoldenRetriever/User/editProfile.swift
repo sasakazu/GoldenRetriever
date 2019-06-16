@@ -24,7 +24,7 @@ class editProfile: UIViewController {
             
             let name = user.displayName
            
-            nameTF.placeholder = name
+            nameTF.text = name
             
             
         }
@@ -44,6 +44,8 @@ class editProfile: UIViewController {
         changeRequest?.commitChanges { (error) in
            
         }
+        
+        self.navigationController?.popViewController(animated: true)
         
         
     }

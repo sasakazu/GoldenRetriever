@@ -13,16 +13,15 @@ import FirebaseDatabase
 
 
 class collectionView: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
- 
     
+    
+    var messageArray = [Any]()
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var messageArray = [Any]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -40,6 +39,8 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
                 }
             })
         }
+        
+   
 
         
     }
@@ -67,9 +68,16 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         let dictionary = messageArray[indexPath.row] as! [String: AnyObject]
         
-        cell.userName.text = dictionary["content"] as? String
         
-     
+        cell.userName.text = dictionary["userName"] as? String
+            
+        cell.contents.text = dictionary["content"] as? String
+            
+            
+            
+ 
+        
+      
         
         return cell
         
