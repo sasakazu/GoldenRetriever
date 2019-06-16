@@ -13,32 +13,38 @@ import FirebaseAuth
 
 class addPhoto: UIViewController, UITextFieldDelegate {
     
-    let ref = Database.database().reference()
-    
+   
     @IBOutlet weak var nameTF: UITextField!
-    @IBOutlet weak var friend1TF: UITextField!
-    @IBOutlet weak var firiendTF2: UITextField!
-    
-    
-
   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.nameTF.delegate = self
         
     }
     
 
     @IBAction func saveBtn(_ sender: Any) {
         
-        guard let text = nameTF.text else { return }
+        if let currentUser = Auth.auth().currentUser {
+            
+        let message = nameTF.text
+        
+        let id = currentUser.uid
+        
+        let ref = Database.database().reference().child("post")
+        
+        let data = [
+            "content": message,
+            "userID": id,
+            "photo": currentUser.email]
+        
+        ref.childByAutoId().setValue(data)
+        
   
-        self.ref.child((Auth.auth().currentUser?.uid)!).childByAutoId().setValue(["user": (Auth.auth().currentUser?.uid)!,"content": text, "date": ServerValue.timestamp()])
+         self.navigationController?.popToRootViewController(animated: true)
         
-        self.navigationController?.popToRootViewController(animated: true)
-        
-   
+        }
  
     }
     
