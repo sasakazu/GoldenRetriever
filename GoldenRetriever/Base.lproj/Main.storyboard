@@ -127,8 +127,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="kem-U5-oBA">
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" id="6E0-0h-lSO"/>
-                            <barButtonItem title="Item" id="fUb-AB-J8O"/>
+                            <barButtonItem title="Item" image="camera" id="6E0-0h-lSO"/>
+                            <barButtonItem title="Item" image="picture" id="fUb-AB-J8O"/>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -448,6 +448,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" width="32" height="32"/>
         <image name="download" width="134.5" height="93.5"/>
+        <image name="picture" width="32" height="32"/>
     </resources>
 </document>
