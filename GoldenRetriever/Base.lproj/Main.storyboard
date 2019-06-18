@@ -133,6 +133,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="contentTF" destination="dZo-Pe-Nu1" id="dZ1-fk-5rT"/>
+                        <outlet property="imageView" destination="ffw-aE-hl1" id="bxq-Hj-Adh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fkd-zQ-wfk" userLabel="First Responder" sceneMemberID="firstResponder"/>

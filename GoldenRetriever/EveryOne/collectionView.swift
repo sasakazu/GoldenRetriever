@@ -34,6 +34,9 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
                 
                 if let _ = Auth.auth().currentUser?.uid {
                     let dictionary = snapshot.value as! [String: AnyObject]
+    
+                    
+                    
                     self.messageArray.insert(dictionary, at: 0)
                     self.collectionView.reloadData()
                 }
@@ -72,8 +75,10 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.userName.text = dictionary["userName"] as? String
             
         cell.contents.text = dictionary["content"] as? String
-            
-            
+        
+ 
+//        cell.postImage.image = dictionary["images"] as? UIImage
+        
             
  
         
