@@ -12,7 +12,8 @@ import Firebase
 import FirebaseAuth
 import FirebaseStorage
 
-class addPhoto: UIViewController, UITextFieldDelegate {
+class addPhoto: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate,
+UINavigationControllerDelegate {
     
     var ref:DatabaseReference?
     
@@ -26,14 +27,102 @@ class addPhoto: UIViewController, UITextFieldDelegate {
         self.contentTF.delegate = self
         
         
-        let image = UIImage(named: "jk")
+//        let image = UIImage(named: "jk")
         
-        imageView.image = image
+//        imageView.image =
         
     }
     
+    
+    @IBAction func camera(_ sender: Any) {
+        
+        let sourceType:UIImagePickerController.SourceType =
+            UIImagePickerController.SourceType.camera
+        // カメラが利用可能かチェック
+        if UIImagePickerController.isSourceTypeAvailable(
+            UIImagePickerController.SourceType.camera){
+            // インスタンスの作成
+            let cameraPicker = UIImagePickerController()
+            cameraPicker.sourceType = sourceType
+            cameraPicker.delegate = self
+            self.present(cameraPicker, animated: true, completion: nil)
+            
+        }
+        else{
+           
+            
+        }
+    }
+    
+    
+    func imagePickerController(_ imagePicker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        
+        if let pickedImage = info[.originalImage]
+            as? UIImage {
+            
+            imageView.contentMode = .scaleAspectFit
+            imageView.image = pickedImage
+            
+        }
+        
+        //閉じる処理
+        imagePicker.dismiss(animated: true, completion: nil)
+        
+        
+    }
+    
+    // 撮影がキャンセルされた時に呼ばれる
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+      
+    }
+    
+    // 書き込み完了結果の受け取り
+    @objc func image(_ image: UIImage,
+                     didFinishSavingWithError error: NSError!,
+                     contextInfo: UnsafeMutableRawPointer) {
+        
+        if error != nil {
+            print(error.code)
+            
+        }
+        else{
+            
+        }
+    }
+    
+    
+    
+    
+    @IBAction func albun(_ sender: Any) {
+        
+        let sourceType:UIImagePickerController.SourceType =
+            UIImagePickerController.SourceType.photoLibrary
+        
+        if UIImagePickerController.isSourceTypeAvailable(
+            UIImagePickerController.SourceType.photoLibrary){
+            // インスタンスの作成
+            let cameraPicker = UIImagePickerController()
+            cameraPicker.sourceType = sourceType
+            cameraPicker.delegate = self
+            self.present(cameraPicker, animated: true, completion: nil)
+            
+           
+        }
+        else{
+           
+            
+        }
+        
+    }
+    
+    
+    
 
     @IBAction func saveBtn(_ sender: Any) {
+        
+      
         
         if let currentUser = Auth.auth().currentUser {
             
@@ -102,11 +191,21 @@ class addPhoto: UIViewController, UITextFieldDelegate {
     
             }
             
-        }
         
+        }
     }
-
-
-
+    
+    
+//    returnキーで閉じる
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        if (text == "\n") {
+            
+            contentTF.resignFirstResponder()
+            return false
+        }
+        return true
+    }
 
 }

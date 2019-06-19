@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Privacy – Photo Library Additions Usage Description</key>
-	<string>許可しますか？</string>
-	<key>Privacy – Camera Usage Description</key>
-	<string>許可しますか？</string>
+	<string>フォトアルバムの使用を許可しますか？</string>
+	<key>NSCameraUsageDescription</key>
+	<string>カメラ機能を使用します、撮影の許可をしますか？</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
