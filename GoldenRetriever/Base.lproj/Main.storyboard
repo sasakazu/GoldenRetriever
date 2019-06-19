@@ -115,9 +115,12 @@
                                     <constraint firstAttribute="width" constant="374" id="bf3-KR-EhX"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I97-3v-s7b">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I97-3v-s7b">
                                 <rect key="frame" x="53" y="652" width="308" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Cj5-Yd-8Oa"/>
+                                    <constraint firstAttribute="width" constant="308" id="NQC-v6-9rp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Post"/>
                                 <connections>
@@ -127,8 +130,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="I97-3v-s7b" firstAttribute="leading" secondItem="NSp-Wb-sbC" secondAttribute="leading" constant="53" id="41S-qA-3Q5"/>
                             <constraint firstItem="ffw-aE-hl1" firstAttribute="top" secondItem="NSp-Wb-sbC" secondAttribute="top" constant="39" id="IZb-FQ-ZW7"/>
+                            <constraint firstItem="NSp-Wb-sbC" firstAttribute="trailing" secondItem="I97-3v-s7b" secondAttribute="trailing" constant="53" id="Yrd-wz-Uv5"/>
                             <constraint firstItem="NSp-Wb-sbC" firstAttribute="trailing" secondItem="ffw-aE-hl1" secondAttribute="trailing" constant="20" id="d9K-oq-SCk"/>
+                            <constraint firstItem="NSp-Wb-sbC" firstAttribute="bottom" secondItem="I97-3v-s7b" secondAttribute="bottom" constant="116" id="mUY-8V-4UQ"/>
                             <constraint firstItem="ffw-aE-hl1" firstAttribute="leading" secondItem="NSp-Wb-sbC" secondAttribute="leading" constant="20" id="zCM-v9-jhS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NSp-Wb-sbC"/>

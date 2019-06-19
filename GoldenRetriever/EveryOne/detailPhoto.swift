@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-import FirebaseUI
+//import FirebaseUI
 
 class detailPhoto: UIViewController {
     
@@ -18,9 +18,7 @@ class detailPhoto: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let image:UIImage = getImageByUrl(url:"https://firebasestorage.googleapis.com/v0/b/goldenretriever-e26c7.appspot.com/o/images%2F65JdmK9mNMXmBcmIzRHli3hnv172__582627375203.jpg?alt=media&token=b762ed22-36a4-4d09-8452-a48aef2740c8")
-        
-        imageView.image = image
+
 
     
 }
@@ -33,16 +31,6 @@ class detailPhoto: UIViewController {
     }
     
         
-    func getImageByUrl(url: String) -> UIImage{
-        let url = URL(string: url)
-        do {
-            let data = try Data(contentsOf: url!)
-            return UIImage(data: data)!
-        } catch let err {
-            print("Error : \(err.localizedDescription)")
-        }
-        return UIImage()
-    }
         
     }
     
