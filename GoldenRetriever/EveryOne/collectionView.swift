@@ -8,9 +8,7 @@
 
 import UIKit
 import Firebase
-import FirebaseAuth
-import FirebaseDatabase
-
+import FirebaseUI
 
 class collectionView: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -76,18 +74,33 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
             
         cell.contents.text = dictionary["content"] as? String
         
- 
-//        cell.postImage.image = dictionary["images"] as? UIImage
+        let urll = dictionary["images"] as? String
         
-            
- 
         
-      
+        let image:UIImage = getImageByUrl(url: urll!)
+        
+        cell.postImage.image = image
+        
         
         return cell
         
         
     }
  
+    
+//    URLから画像に変換する
 
+    func getImageByUrl(url: String) -> UIImage{
+        let url = URL(string: url)
+        do {
+            let data = try Data(contentsOf: url!)
+            return UIImage(data: data)!
+        } catch let err {
+            print("Error : \(err.localizedDescription)")
+        }
+        return UIImage()
+    }
+    
+    
+    
 }

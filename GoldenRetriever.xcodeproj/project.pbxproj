@@ -11,6 +11,7 @@
 		6C003EC034D9990F3D458F9D /* Pods_GoldenRetrieverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21C7280A7D7FD51324EE312A /* Pods_GoldenRetrieverUITests.framework */; };
 		73525F1322B5FF6A007C23D4 /* customCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73525F1222B5FF6A007C23D4 /* customCell.swift */; };
 		73525F1522B5FFD1007C23D4 /* collectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73525F1422B5FFD1007C23D4 /* collectionView.swift */; };
+		739D7B7D22BA203D00D0A525 /* detailPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D7B7C22BA203D00D0A525 /* detailPhoto.swift */; };
 		73EABB4D22B349EF0089713D /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EABB4C22B349EF0089713D /* login.swift */; };
 		73EABB4F22B351380089713D /* editProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EABB4E22B351380089713D /* editProfile.swift */; };
 		73EABB5222B354310089713D /* acountMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EABB5122B354310089713D /* acountMain.swift */; };
@@ -51,6 +52,7 @@
 		6D11D1B2EC6195AB8449C9B8 /* Pods_GoldenRetriever.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoldenRetriever.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73525F1222B5FF6A007C23D4 /* customCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customCell.swift; sourceTree = "<group>"; };
 		73525F1422B5FFD1007C23D4 /* collectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collectionView.swift; sourceTree = "<group>"; };
+		739D7B7C22BA203D00D0A525 /* detailPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailPhoto.swift; sourceTree = "<group>"; };
 		73EABB4C22B349EF0089713D /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
 		73EABB4E22B351380089713D /* editProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editProfile.swift; sourceTree = "<group>"; };
 		73EABB5122B354310089713D /* acountMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = acountMain.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				73525F1222B5FF6A007C23D4 /* customCell.swift */,
 				73EABBC822B38DDA0089713D /* addPhoto.swift */,
 				73525F1422B5FFD1007C23D4 /* collectionView.swift */,
+				739D7B7C22BA203D00D0A525 /* detailPhoto.swift */,
 			);
 			path = EveryOne;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				73F4E70422B203560050F409 /* Frameworks */,
 				73F4E70522B203560050F409 /* Resources */,
 				A3B850C60E05AE35D20843C0 /* [CP] Embed Pods Frameworks */,
+				B8B133AF6DFFC8F765E8597B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -398,8 +402,16 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GoldenRetriever/Pods-GoldenRetriever-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -407,14 +419,56 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoldenRetriever/Pods-GoldenRetriever-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8B133AF6DFFC8F765E8597B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoldenRetriever/Pods-GoldenRetriever-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAnonymousAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseEmailAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAnonymousAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseEmailAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoldenRetriever/Pods-GoldenRetriever-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E768483F46C5E4B7430E5E74 /* [CP] Check Pods Manifest.lock */ = {
@@ -449,6 +503,7 @@
 				73525F1522B5FFD1007C23D4 /* collectionView.swift in Sources */,
 				73EABBC922B38DDA0089713D /* addPhoto.swift in Sources */,
 				73EABBCB22B39F370089713D /* signUp.swift in Sources */,
+				739D7B7D22BA203D00D0A525 /* detailPhoto.swift in Sources */,
 				73F4E70D22B203560050F409 /* ViewController.swift in Sources */,
 				73EABB4D22B349EF0089713D /* login.swift in Sources */,
 				73EABB5222B354310089713D /* acountMain.swift in Sources */,

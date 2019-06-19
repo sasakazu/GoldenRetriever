@@ -47,7 +47,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="LpK-cX-gvc">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LpK-cX-gvc">
                                                     <rect key="frame" x="0.0" y="93" width="414" height="346"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -108,9 +108,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ffw-aE-hl1">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ffw-aE-hl1">
                                 <rect key="frame" x="20" y="127" width="374" height="365"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="365" id="Yef-2u-s7Y"/>
+                                    <constraint firstAttribute="width" constant="374" id="bf3-KR-EhX"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I97-3v-s7b">
                                 <rect key="frame" x="53" y="652" width="308" height="45"/>
@@ -123,6 +126,11 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ffw-aE-hl1" firstAttribute="top" secondItem="NSp-Wb-sbC" secondAttribute="top" constant="39" id="IZb-FQ-ZW7"/>
+                            <constraint firstItem="NSp-Wb-sbC" firstAttribute="trailing" secondItem="ffw-aE-hl1" secondAttribute="trailing" constant="20" id="d9K-oq-SCk"/>
+                            <constraint firstItem="ffw-aE-hl1" firstAttribute="leading" secondItem="NSp-Wb-sbC" secondAttribute="leading" constant="20" id="zCM-v9-jhS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="NSp-Wb-sbC"/>
                     </view>
                     <navigationItem key="navigationItem" id="kem-U5-oBA">
@@ -140,10 +148,10 @@
             </objects>
             <point key="canvasLocation" x="2411.594202898551" y="-1233.4821428571429"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Photo-->
         <scene sceneID="MV9-sC-DMx">
             <objects>
-                <viewController id="9Pd-dT-67h" sceneMemberID="viewController">
+                <viewController id="9Pd-dT-67h" customClass="detailPhoto" customModule="GoldenRetriever" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9tc-wK-e7h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,10 +178,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTK-Na-SQ7">
+                                <rect key="frame" x="184" y="738" width="99" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="eIV-MX-egy"/>
+                                    <constraint firstAttribute="width" constant="99" id="x45-Dg-jc7"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="button:" destination="9Pd-dT-67h" eventType="touchUpInside" id="Q6S-Hi-Aei"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ixe-yj-ndA" firstAttribute="bottom" secondItem="wTK-Na-SQ7" secondAttribute="bottom" constant="45" id="Lav-bV-opt"/>
+                            <constraint firstItem="wTK-Na-SQ7" firstAttribute="leading" secondItem="ixe-yj-ndA" secondAttribute="leading" constant="184" id="mB9-Gu-Tm4"/>
+                            <constraint firstItem="ixe-yj-ndA" firstAttribute="trailing" secondItem="wTK-Na-SQ7" secondAttribute="trailing" constant="131" id="yNI-70-tbs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ixe-yj-ndA"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="Oak-K8-ZQS" id="sXi-RP-gH6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PLg-50-YIn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -450,7 +477,6 @@
     </scenes>
     <resources>
         <image name="camera" width="32" height="32"/>
-        <image name="download" width="134.5" height="93.5"/>
         <image name="picture" width="32" height="32"/>
     </resources>
 </document>

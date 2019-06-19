@@ -26,7 +26,7 @@ class addPhoto: UIViewController, UITextFieldDelegate {
         self.contentTF.delegate = self
         
         
-        let image = UIImage(named: "fff")
+        let image = UIImage(named: "jk")
         
         imageView.image = image
         
