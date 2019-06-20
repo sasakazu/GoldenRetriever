@@ -11,8 +11,7 @@ target 'GoldenRetriever' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
-#  pod 'FirebaseUI'
-#  pod 'FirebaseUI/Storage'
+  pod 'FirebaseUI'
 
 
 

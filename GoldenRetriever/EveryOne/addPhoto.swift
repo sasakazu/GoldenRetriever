@@ -26,10 +26,10 @@ UINavigationControllerDelegate {
         
         self.contentTF.delegate = self
         
-        
+//        test用イメージ
 //        let image = UIImage(named: "jk")
         
-//        imageView.image =
+//        imageView.image = image
         
     }
     
@@ -61,7 +61,7 @@ UINavigationControllerDelegate {
         if let pickedImage = info[.originalImage]
             as? UIImage {
             
-            imageView.contentMode = .scaleAspectFit
+
             imageView.image = pickedImage
             
         }
@@ -182,7 +182,8 @@ UINavigationControllerDelegate {
         ref.childByAutoId().setValue(data)
         
   
-         self.navigationController?.popToRootViewController(animated: true)
+        print("成功！")
+    self.navigationController?.popToRootViewController(animated: true)
         
         }
  
@@ -198,14 +199,16 @@ UINavigationControllerDelegate {
     
 //    returnキーで閉じる
     
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        if (text == "\n") {
-            
-            contentTF.resignFirstResponder()
-            return false
-        }
+        contentTF.resignFirstResponder()
+       
         return true
+        
     }
 
+    
+    
+    
+    
 }

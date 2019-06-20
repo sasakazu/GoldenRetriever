@@ -9,13 +9,15 @@
 import UIKit
 import FirebaseAuth
 
-class editProfile: UIViewController {
+class editProfile: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nameTF: UITextField!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nameTF.delegate = self
         
         
         let user = Auth.auth().currentUser
@@ -60,6 +62,18 @@ class editProfile: UIViewController {
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
+    }
+    
+    
+    
+    //    returnキーで閉じる
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        nameTF.resignFirstResponder()
+        
+        return true
+        
     }
     
 
