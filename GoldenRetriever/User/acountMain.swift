@@ -19,6 +19,9 @@ class acountMain: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.image.layer.cornerRadius = 50.0
+        
 
         let user = Auth.auth().currentUser
         

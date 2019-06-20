@@ -163,11 +163,11 @@
 			children = (
 				73F4E70A22B203560050F409 /* AppDelegate.swift */,
 				73F4E70C22B203560050F409 /* ViewController.swift */,
-				73F4E70E22B203560050F409 /* Main.storyboard */,
 				73EABBC722B38DB30089713D /* EveryOne */,
 				73EABB4B22B349A80089713D /* Login */,
 				73EABB5022B354050089713D /* User */,
 				73F4E71122B203570050F409 /* Assets.xcassets */,
+				73F4E70E22B203560050F409 /* Main.storyboard */,
 				73F4E73822B205B60050F409 /* GoogleService-Info.plist */,
 				73F4E71322B203570050F409 /* LaunchScreen.storyboard */,
 				73F4E71622B203570050F409 /* Info.plist */,

@@ -27,9 +27,9 @@ UINavigationControllerDelegate {
         self.contentTF.delegate = self
         
 //        test用イメージ
-//        let image = UIImage(named: "jk")
+        let image = UIImage(named: "no_image")
         
-//        imageView.image = image
+        imageView.image = image
         
     }
     
