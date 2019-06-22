@@ -11,6 +11,7 @@ import FirebaseDatabase
 import Firebase
 import FirebaseAuth
 import FirebaseStorage
+import SVProgressHUD
 
 class addPhoto: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
@@ -126,7 +127,10 @@ UINavigationControllerDelegate {
         
         if let currentUser = Auth.auth().currentUser {
             
-            
+//          progressスタート
+            SVProgressHUD.show()
+          
+           
             
             var imageData = Data()
             
@@ -178,18 +182,25 @@ UINavigationControllerDelegate {
             "content": comment
             
             ]
+                    
+        
         
         ref.childByAutoId().setValue(data)
-        
+   
   
         print("成功！")
+                    
+    SVProgressHUD.showSuccess(withStatus: "Success")
+                    
+                    
     self.navigationController?.popToRootViewController(animated: true)
+         
+                    
         
-        }
+        
+                
+                }
  
-
-    
-    
             }
             
         

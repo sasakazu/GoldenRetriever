@@ -176,6 +176,7 @@ PODS:
   - SDWebImage (4.4.6):
     - SDWebImage/Core (= 4.4.6)
   - SDWebImage/Core (4.4.6)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - Firebase
@@ -183,6 +184,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - FirebaseUI
+  - SVProgressHUD
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -210,6 +212,7 @@ SPEC REPOS:
     - nanopb
     - Protobuf
     - SDWebImage
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
@@ -236,7 +239,8 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 75de063a1c1729cddcc507fc084b43debb6b38ab
+PODFILE CHECKSUM: 37a6222e430c95321edbc443b241f22bc2a17175
 
 COCOAPODS: 1.6.1
