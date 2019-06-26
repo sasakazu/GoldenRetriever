@@ -26,26 +26,32 @@ class acountMain: UIViewController {
       
         self.image.layer.cornerRadius = 50.0
         
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
         
-        
-        let user = Auth.auth().currentUser
-        
-        if let user = user {
+        let userID = Auth.auth().currentUser?.uid
+        ref.child("users").child(userID!).observe(.value, with: { (snapshot) in
+           
+            let value = snapshot.value as? NSDictionary
+            let username = value?["userName"] as? String ?? ""
+            let dogname = value?["dogName"] as? String ?? ""
+            print("usernameは、\(username)")
             
-     
-            let name = user.displayName
+          self.userName.text = username
+          self.dogNameLabel.text = dogname
             
-            userName.text = name
-         
-
+            
+        })
+        
+            
+        { (error) in
+            print(error.localizedDescription)
         }
+    
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-       
-    }
-    
+  
    
     
     

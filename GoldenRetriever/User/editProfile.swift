@@ -12,58 +12,60 @@ import Firebase
 
 class editProfile: UIViewController, UITextFieldDelegate {
     
+    
+    
+    @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var dogNameTF: UITextField!
-    
-    
-    var ref:DatabaseReference?
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dogNameTF.delegate = self
+        
+        
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        
+        let userID = Auth.auth().currentUser?.uid
+        
+        ref.child("users").child(userID!).observe(.value, with: { (snapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+            let username = value?["userName"] as? String ?? ""
+            let dogname = value?["dogName"] as? String ?? ""
+            
+            self.userNameTF.text = username
+            self.dogNameTF.text = dogname
+            
+        })
+            
+
+        
        
-        fetch()
   
     }
     
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
 
-        fetch()
-
-    }
-    
-    
-    
-    
-    func fetch() {
-     
-   
-        
-    }
-    
-    
     @IBAction func update(_ sender: Any) {
         
        if let currentUser = Auth.auth().currentUser {
         
-        let userName = currentUser.displayName
+        let userName = userNameTF.text
         let userID = currentUser.uid
         let dogName = dogNameTF.text
         
-        let userInfo = [
+        let ref = Database.database().reference()
+        
+        let updateUserInfo = [
             "userName": userName,
             "userID": userID,
-            "userIcon": userID,
+//            "userIcon": userID,
             "dogName": dogName
             
         ]
         
-        let ref = Database.database().reference().child("users").child(userID)
-        
-        ref.updateChildValues(userInfo)
+        ref.child("users").child((userID)).updateChildValues(updateUserInfo as [AnyHashable : Any])
       
         self.navigationController?.popViewController(animated: true)
         }

@@ -49,7 +49,7 @@ class signUp: UIViewController, UITextFieldDelegate {
         Auth.auth().createUser(withEmail: email!, password: password!) { (user, error) in
             
             let newUser = [
-                "newUser": userName,
+                "userName": userName,
                 "email": email,
                 "userID": user?.user.uid
             
@@ -66,7 +66,7 @@ class signUp: UIViewController, UITextFieldDelegate {
                             
                         }
             
-                    }
+        }
         
        
         

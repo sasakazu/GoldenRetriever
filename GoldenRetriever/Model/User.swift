@@ -10,3 +10,6 @@ import Foundation
 
 
 
+//var user:String = ""
+
+
