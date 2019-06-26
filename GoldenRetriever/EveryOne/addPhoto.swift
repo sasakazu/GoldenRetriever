@@ -7,16 +7,17 @@
 //
 
 import UIKit
-import FirebaseDatabase
+//import FirebaseDatabase
 import Firebase
-import FirebaseAuth
-import FirebaseStorage
+//import FirebaseAuth
+//import FirebaseStorage
 import SVProgressHUD
 
 class addPhoto: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
     
     var ref:DatabaseReference?
+    var userRef:DatabaseReference?
     
     @IBOutlet weak var contentTF: UITextField!
     @IBOutlet weak var imageView: UIImageView!
@@ -167,12 +168,7 @@ UINavigationControllerDelegate {
         let userID = currentUser.uid
         let userName = currentUser.displayName
         let deta = downloadURL.absoluteString
-
-                    
         let comment = self.contentTF.text
-        
-       
-        let ref = Database.database().reference().child("post")
         
         let data = [
             "userID": userID,
@@ -183,11 +179,15 @@ UINavigationControllerDelegate {
             
             ]
                     
-        
-        
-        ref.childByAutoId().setValue(data)
-   
   
+    
+                    
+        let ref = Database.database().reference().child("post")
+        ref.childByAutoId().setValue(data)
+                    
+                    
+        
+
         print("成功！")
                     
     SVProgressHUD.showSuccess(withStatus: "Success")

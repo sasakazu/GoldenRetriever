@@ -7,39 +7,50 @@
 //
 
 import UIKit
-import FirebaseAuth
+import Firebase
+
+
 
 class acountMain: UIViewController {
     
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
+    
+    @IBOutlet weak var dogNameLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+      
         self.image.layer.cornerRadius = 50.0
         
-
+        
+        
         let user = Auth.auth().currentUser
         
         if let user = user {
             
-            let email = user.email
+     
             let name = user.displayName
             
             userName.text = name
-            emailLabel.text = email
-            
-            
-            
-            
+         
+
         }
         
     }
-
-
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+       
+    }
+    
+   
+    
+    
+    
+    
+    
+    
 }

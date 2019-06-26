@@ -7,48 +7,66 @@
 //
 
 import UIKit
-import FirebaseAuth
+import Firebase
+
 
 class editProfile: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var nameTF: UITextField!
+    @IBOutlet weak var dogNameTF: UITextField!
+    
+    
+    var ref:DatabaseReference?
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameTF.delegate = self
-        
-        
-        let user = Auth.auth().currentUser
-        
-        if let user = user {
-            
-            let name = user.displayName
-           
-            nameTF.text = name
-            
-            
-        }
-        
-        
-        
+        dogNameTF.delegate = self
+       
+        fetch()
+  
+    }
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
 
+        fetch()
+
+    }
+    
+    
+    
+    
+    func fetch() {
+     
+   
+        
     }
     
     
     @IBAction func update(_ sender: Any) {
         
-        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+       if let currentUser = Auth.auth().currentUser {
         
-        changeRequest?.displayName = nameTF.text
+        let userName = currentUser.displayName
+        let userID = currentUser.uid
+        let dogName = dogNameTF.text
         
-        changeRequest?.commitChanges { (error) in
-           
-        }
+        let userInfo = [
+            "userName": userName,
+            "userID": userID,
+            "userIcon": userID,
+            "dogName": dogName
+            
+        ]
         
+        let ref = Database.database().reference().child("users").child(userID)
+        
+        ref.updateChildValues(userInfo)
+      
         self.navigationController?.popViewController(animated: true)
-        
+        }
         
     }
     
@@ -62,6 +80,13 @@ class editProfile: UIViewController, UITextFieldDelegate {
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
+        
+        
+        
+        let next: UIViewController = storyboard?.instantiateViewController(withIdentifier: "login") as! login
+        present(next, animated: true, completion: nil)
+        
+        
     }
     
     
@@ -70,7 +95,7 @@ class editProfile: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        nameTF.resignFirstResponder()
+        dogNameTF.resignFirstResponder()
         
         return true
         

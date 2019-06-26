@@ -8,32 +8,84 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
+import FirebaseDatabase
 
-class signUp: UIViewController {
+
+class signUp: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
+ 
     
+    
+    
+    @IBOutlet weak var userName: UITextField!
+    @IBOutlet weak var emailTF: UITextField!
+    @IBOutlet weak var passwordTF: UITextField!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.userName.delegate = self
+        self.emailTF.delegate = self
+        self.passwordTF.delegate = self
+
     }
     
     
-    @IBAction func loginBtn(_ sender: Any) {
+
+
+    
+
+    @IBAction func sigunup(_ sender: Any) {
         
-        Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (authResult, error) in
-            
-            guard let user = authResult?.user else { return }
-            
-            
-            
-            
-        }
+        let userName = self.userName.text
+        let email = emailTF.text
+        let password = passwordTF.text
+        
+        let ref = Database.database().reference()
         
         
+        Auth.auth().createUser(withEmail: email!, password: password!) { (user, error) in
+            
+            let newUser = [
+                "newUser": userName,
+                "email": email,
+                "userID": user?.user.uid
+            
+            ]
+            
+                        if error == nil {
+            
+                            ref.child("users").child(((user?.user.uid)!)).setValue(newUser)
+            
+                        } else {
+            
+                         print("error")
+                            
+                            
+                        }
+            
+                    }
+        
+       
+        
+        
+        
+    }
+    
+
+        
+    
+    //    returnキーで閉じる
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        userName.resignFirstResponder()
+        emailTF.resignFirstResponder()
+        passwordTF.resignFirstResponder()
+        
+        return true
         
     }
     

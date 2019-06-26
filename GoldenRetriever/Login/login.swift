@@ -29,13 +29,24 @@ class login: UIViewController {
         
         Auth.auth().signIn(withEmail: emailTF.text!, password: passTF.text!) { (user, error) in
          
+            
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+          
+     
         }
+        
+        
+        self.performSegue(withIdentifier: "toVC", sender: self)
+        
+    }
+        
+    
+    
     }
     
     
-   
-    
 
-
-
-}
