@@ -13,10 +13,7 @@ import FirebaseDatabase
 
 
 class signUp: UIViewController, UITextFieldDelegate {
-    
- 
-    
-    
+
     
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var emailTF: UITextField!
