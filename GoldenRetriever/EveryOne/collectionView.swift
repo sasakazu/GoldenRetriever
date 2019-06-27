@@ -13,7 +13,7 @@ import FirebaseUI
 class collectionView: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     
-    var messageArray = [Any]()
+    var messageArray = [Post]()
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -21,32 +21,59 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
-        
-        if Auth.auth().currentUser != nil {
-            let postsRef = Database.database().reference().child("post")
-            
-            postsRef.observe(.childAdded, with: { snapshot in
-                
-                if let _ = Auth.auth().currentUser?.uid {
-                    let dictionary = snapshot.value as! [String: AnyObject]
-    
-                    
-                    
-                    self.messageArray.insert(dictionary, at: 0)
-                    self.collectionView.reloadData()
-                }
-            })
-        }
-        
-   
+      
 
+        let ref = Database.database().reference()
+
+        let userID = Auth.auth().currentUser?.uid
         
+        ref.child("posts").child(userID!).observe(.value) { (snap) in
+            
+//            let messageArray = snap.value as! NSDictionary
+            
+         
+//            print(messageArray)
+            
+            let postDictionary = snap.value as! NSDictionary
+            
+      
+            
+            for(p) in postDictionary {
+                
+                let posts = p.value as? NSDictionary
+                
+//                print(posts)
+                
+                
+                let username = posts?.value(forKey: "userName")
+                let postImage = posts?.value(forKey: "images")
+                let newPost = Post(username: username as! String, postImage: postImage as! String)
+
+                self.messageArray.append(newPost)
+                
+                print(newPost.postImage)
+                
+                self.collectionView.reloadData()
+            
+            
+
+      
+        
+        
+                self.collectionView.delegate = self
+                self.collectionView.dataSource = self
+            
+            
+            }
+            
+            
+        }
+       
+        
+     
     }
     
-    
+ 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -61,23 +88,19 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
-        let cell = collectionView.dequeueReusableCell (
+
+        let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: "Cell",
             for: indexPath as IndexPath) as! customCell
         
-        let dictionary = messageArray[indexPath.row] as! [String: AnyObject]
+
+       cell.userName.text = messageArray[indexPath.row].username
         
-        
-        cell.userName.text = dictionary["userName"] as? String
-            
-        cell.contents.text = dictionary["content"] as? String
         
 
-        
-        let url = NSURL(string: (dictionary["images"] as? String)!)
-        
+
+        let url = NSURL(string: (messageArray[indexPath.row].postImage) as String)
+
         cell.postImage.sd_setImage(with: url as URL?)
         
 
@@ -85,6 +108,8 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         
     }
+ 
+    
  
     
     

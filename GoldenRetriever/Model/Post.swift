@@ -7,3 +7,24 @@
 //
 
 import Foundation
+
+
+class Post{
+    
+    var username: String = ""
+    var postImage:String = ""
+    var postId:String = ""
+    
+    
+    init(username: String, postImage: String) {
+        
+        self.username = username
+        self.postImage = postImage
+      
+        
+        
+    }
+    
+}
+
+

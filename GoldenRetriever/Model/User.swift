@@ -10,6 +10,25 @@ import Foundation
 
 
 
-//var user:String = ""
+class User{
+    
+    var username: String = ""
+    var email:String = ""
+    var postId:String = ""
+
+
+    init(username: String, email:String, postId:String) {
+        
+        self.username = username
+        self.postId = postId
+        self.postId = postId
+        
+        
+    }
+    
+    
+
+}
+
 
 

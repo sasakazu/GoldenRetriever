@@ -7,17 +7,14 @@
 //
 
 import UIKit
-//import FirebaseDatabase
 import Firebase
-//import FirebaseAuth
-//import FirebaseStorage
 import SVProgressHUD
+
 
 class addPhoto: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
     
-    var ref:DatabaseReference?
-    var userRef:DatabaseReference?
+
     
     @IBOutlet weak var contentTF: UITextField!
     @IBOutlet weak var imageView: UIImageView!
@@ -28,10 +25,19 @@ UINavigationControllerDelegate {
         
         self.contentTF.delegate = self
         
-//        test用イメージ
-        let image = UIImage(named: "fff")
         
+        let image = UIImage(named: "fff")
         imageView.image = image
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
     }
     
@@ -62,16 +68,14 @@ UINavigationControllerDelegate {
         
         if let pickedImage = info[.originalImage]
             as? UIImage {
-            
-
+ 
             imageView.image = pickedImage
             
         }
         
         //閉じる処理
         imagePicker.dismiss(animated: true, completion: nil)
-        
-        
+
     }
     
     // 撮影がキャンセルされた時に呼ばれる
@@ -118,40 +122,31 @@ UINavigationControllerDelegate {
         }
         
     }
-    
-    
-    
 
     @IBAction func saveBtn(_ sender: Any) {
+   
         
-      
-        
-        if let currentUser = Auth.auth().currentUser {
-            
-//          progressスタート
             SVProgressHUD.show()
-          
-           
             
             var imageData = Data()
             
             let storage = Storage.storage()
             
             let storageRef = storage.reference(forURL: "gs://goldenretriever-e26c7.appspot.com/")
+        
+           let userID = Auth.auth().currentUser?.uid
             
             
-            let riversRef = storageRef.child("images/" + (currentUser.uid) +  "__\(Int(Date.timeIntervalSinceReferenceDate * 1000)).jpg")
+        let riversRef = storageRef.child("images/" + (userID!) +  "__\(Int(Date.timeIntervalSinceReferenceDate * 1000)).jpg")
             
             let image = imageView.image
 
-
-            
             imageData = (image?.jpegData(compressionQuality: 1.0))!
             
             
             _ = riversRef.putData(imageData, metadata: nil) { (metadata, error) in
                 guard metadata != nil else {
-                    // Uh-oh, an error occurred!
+                    
                     return
                 }
                 
@@ -162,51 +157,63 @@ UINavigationControllerDelegate {
                         return
                     }
                     
+        
+                let ref = Database.database().reference()
+            
+                    
+               let userRef = ref.child("users").child(userID!)
+                
+                
+                userRef.observeSingleEvent(of: .value, with:  { (snapshot) in
 
-        
-            
-        let userID = currentUser.uid
-        let userName = currentUser.displayName
-        let deta = downloadURL.absoluteString
-        let comment = self.contentTF.text
-        
-        let data = [
-            "userID": userID,
-            "userName": userName,
-            "userIcon": userID,
-            "images": deta,
-            "content": comment
-            
-            ]
+                let dictionaly = snapshot.value as? NSDictionary
                     
-  
-    
+              
+                
+                    let username = dictionaly?["userName"] as? String ?? ""
+                    let dogname = dictionaly?["dogName"] as? String ?? ""
+
+                let userID = userID
+                let userName = username
+                let deta = downloadURL.absoluteString
+                let comment = self.contentTF.text
+
+
+
+                let data = [
+                            "userID": userID,
+                            "userName": userName,
+                            "userIcon": userID,
+                            "images": deta,
+                            "content": comment
                     
-        let ref = Database.database().reference().child("post")
-        ref.childByAutoId().setValue(data)
-                    
-                    
-        
+                    ]
+
+                    ref.child("posts").child(userID!).childByAutoId().updateChildValues(data as [AnyHashable : Any])
+
+
+                        })
+
 
         print("成功！")
-                    
+
     SVProgressHUD.showSuccess(withStatus: "Success")
-                    
-                    
+
+
     self.navigationController?.popToRootViewController(animated: true)
-         
-                    
-        
-        
-                
+
+
+
+
+
                 }
- 
+
             }
-            
-        
-        }
-    }
     
+    
+        }
+
+                
     
 //    returnキーで閉じる
     
@@ -219,6 +226,8 @@ UINavigationControllerDelegate {
     }
 
     
+    
+ 
     
     
     
