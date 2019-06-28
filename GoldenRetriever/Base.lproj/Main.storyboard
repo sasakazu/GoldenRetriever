@@ -296,6 +296,9 @@
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="ファイル選択"/>
+                                <connections>
+                                    <action selector="chosePicture:" destination="cmR-MH-4TA" eventType="touchUpInside" id="3Zf-Nz-ion"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="わんちゃん:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neh-S0-nTu">
                                 <rect key="frame" x="22" y="287" width="92" height="21"/>
@@ -332,6 +335,7 @@
                     </view>
                     <connections>
                         <outlet property="dogNameTF" destination="Net-CG-Yhw" id="tW6-Rw-VpI"/>
+                        <outlet property="userIcon" destination="4zS-gu-ebU" id="YP7-Ce-D5V"/>
                         <outlet property="userNameTF" destination="Hs5-j4-1P0" id="Kc7-t9-2el"/>
                     </connections>
                 </viewController>

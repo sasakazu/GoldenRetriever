@@ -27,43 +27,44 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
 
         let userID = Auth.auth().currentUser?.uid
         
-        ref.child("posts").child(userID!).observe(.value) { (snap) in
+        ref.child("posts").observe(.value) { (snap) in
             
-//            let messageArray = snap.value as! NSDictionary
             
-         
-//            print(messageArray)
-            
-            let postDictionary = snap.value as! NSDictionary
+            let postDictionary = snap.value as? NSDictionary
             
       
+            print(postDictionary)
             
-            for(p) in postDictionary {
+            if postDictionary != nil {
+                
+            
+            
+                for(p) in postDictionary! {
                 
                 let posts = p.value as? NSDictionary
                 
-//                print(posts)
                 
-                
-                let username = posts?.value(forKey: "userName")
-                let postImage = posts?.value(forKey: "images")
-                let newPost = Post(username: username as! String, postImage: postImage as! String)
+               guard let username = posts?.value(forKey: "userName") else {return}
+               guard let postImage = posts?.value(forKey: "images") else {return}
+               let newPost = Post(username: username as? String ?? "", postImage: postImage as? String ?? "")
 
                 self.messageArray.append(newPost)
                 
                 print(newPost.postImage)
                 
                 self.collectionView.reloadData()
-            
-            
 
-      
-        
-        
                 self.collectionView.delegate = self
                 self.collectionView.dataSource = self
             
             
+            }
+                
+            }
+            
+            else {
+                
+                print("error")
             }
             
             

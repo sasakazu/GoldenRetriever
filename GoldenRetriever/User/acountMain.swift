@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-
+import FirebaseUI
 
 
 class acountMain: UIViewController {
@@ -35,10 +35,15 @@ class acountMain: UIViewController {
             let value = snapshot.value as? NSDictionary
             let username = value?["userName"] as? String ?? ""
             let dogname = value?["dogName"] as? String ?? ""
+            let userIcon = value?["userIcon"] as? String ?? ""
+            
             print("usernameは、\(username)")
             
           self.userName.text = username
           self.dogNameLabel.text = dogname
+            
+          let url = NSURL(string: (userIcon) as String)
+          self.image.sd_setImage(with: url as URL?)
             
             
         })

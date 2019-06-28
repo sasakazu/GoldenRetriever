@@ -28,16 +28,7 @@ UINavigationControllerDelegate {
         
         let image = UIImage(named: "fff")
         imageView.image = image
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         
     }
     
