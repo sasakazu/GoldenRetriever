@@ -42,6 +42,10 @@ UINavigationControllerDelegate {
             self.userNameTF.text = username
             self.dogNameTF.text = dogname
             
+            
+         
+                
+            
         })
             
 

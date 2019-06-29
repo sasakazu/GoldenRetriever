@@ -180,7 +180,7 @@ UINavigationControllerDelegate {
                     
                     ]
 
-                    ref.child("posts").child(userID!).childByAutoId().updateChildValues(data as [AnyHashable : Any])
+                    ref.child("posts").child(userID!).childByAutoId().setValue(data as [AnyHashable : Any])
 
 
                         })

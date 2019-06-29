@@ -27,13 +27,13 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
 
         let userID = Auth.auth().currentUser?.uid
         
-        ref.child("posts").observe(.value) { (snap) in
+        ref.child("posts").child(userID!).observe(.value) { (snap) in
             
             
             let postDictionary = snap.value as? NSDictionary
             
       
-            print(postDictionary)
+//            print(postDictionary)
             
             if postDictionary != nil {
                 
@@ -50,13 +50,12 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
 
                 self.messageArray.append(newPost)
                 
-                print(newPost.postImage)
+//                print(postImage)
+                    
+                    
                 
                 self.collectionView.reloadData()
 
-                self.collectionView.delegate = self
-                self.collectionView.dataSource = self
-            
             
             }
                 
@@ -70,6 +69,9 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
             
         }
        
+        
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
         
      
     }

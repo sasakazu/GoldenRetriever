@@ -19,6 +19,7 @@
 		73EABBCB22B39F370089713D /* signUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EABBCA22B39F370089713D /* signUp.swift */; };
 		73EBEC8D22C1D708008FCB9E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EBEC8C22C1D708008FCB9E /* User.swift */; };
 		73EBEC8F22C1D71D008FCB9E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EBEC8E22C1D71D008FCB9E /* Post.swift */; };
+		73EBEC9122C5FEE1008FCB9E /* myCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EBEC9022C5FEE1008FCB9E /* myCustomCell.swift */; };
 		73F4E70B22B203560050F409 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4E70A22B203560050F409 /* AppDelegate.swift */; };
 		73F4E70D22B203560050F409 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F4E70C22B203560050F409 /* ViewController.swift */; };
 		73F4E71022B203560050F409 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73F4E70E22B203560050F409 /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 		73EABBCA22B39F370089713D /* signUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUp.swift; sourceTree = "<group>"; };
 		73EBEC8C22C1D708008FCB9E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		73EBEC8E22C1D71D008FCB9E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		73EBEC9022C5FEE1008FCB9E /* myCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCustomCell.swift; sourceTree = "<group>"; };
 		73F4E70722B203560050F409 /* GoldenRetriever.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldenRetriever.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F4E70A22B203560050F409 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73F4E70C22B203560050F409 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				73EABB4E22B351380089713D /* editProfile.swift */,
 				73EABB5122B354310089713D /* acountMain.swift */,
+				73EBEC9022C5FEE1008FCB9E /* myCustomCell.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -176,12 +179,12 @@
 			children = (
 				73F4E70A22B203560050F409 /* AppDelegate.swift */,
 				73F4E70C22B203560050F409 /* ViewController.swift */,
+				73F4E70E22B203560050F409 /* Main.storyboard */,
 				73EBEC8722BF26D0008FCB9E /* Model */,
 				73EABBC722B38DB30089713D /* EveryOne */,
 				73EABB4B22B349A80089713D /* Login */,
 				73EABB5022B354050089713D /* User */,
 				73F4E71122B203570050F409 /* Assets.xcassets */,
-				73F4E70E22B203560050F409 /* Main.storyboard */,
 				73F4E73822B205B60050F409 /* GoogleService-Info.plist */,
 				73F4E71322B203570050F409 /* LaunchScreen.storyboard */,
 				73F4E71622B203570050F409 /* Info.plist */,
@@ -525,6 +528,7 @@
 				73EABB4D22B349EF0089713D /* login.swift in Sources */,
 				73EABB5222B354310089713D /* acountMain.swift in Sources */,
 				73F4E70B22B203560050F409 /* AppDelegate.swift in Sources */,
+				73EBEC9122C5FEE1008FCB9E /* myCustomCell.swift in Sources */,
 				73525F1322B5FF6A007C23D4 /* customCell.swift in Sources */,
 				73EABB4F22B351380089713D /* editProfile.swift in Sources */,
 				73EBEC8D22C1D708008FCB9E /* User.swift in Sources */,

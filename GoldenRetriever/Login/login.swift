@@ -40,7 +40,7 @@ class login: UIViewController {
         }
         
         
-        self.performSegue(withIdentifier: "toVC", sender: self)
+//        self.performSegue(withIdentifier: "toVC", sender: self)
         
     }
         
