@@ -15,15 +15,9 @@ class acountMain: UIViewController, UICollectionViewDelegate, UICollectionViewDa
  
     var myFeed = [Post]()
     
-    var postRefHandle: DatabaseHandle!
     var ref: DatabaseReference!
    
-//    var handle: UInt!
-//    var updateHandler: UInt!
 
-//    override func loadView() {
-//        remove()
-//    }
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var userName: UILabel!

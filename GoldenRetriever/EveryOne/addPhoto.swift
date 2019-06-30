@@ -161,22 +161,26 @@ UINavigationControllerDelegate {
                     
               
                 
-                    let username = dictionaly?["userName"] as? String ?? ""
-                    let dogname = dictionaly?["dogName"] as? String ?? ""
+                let username = dictionaly?["userName"] as? String ?? ""
+                let dogname = dictionaly?["dogName"] as? String ?? ""
+                let userIcon = dictionaly?["userIcon"] as? String ?? ""
 
+                    
                 let userID = userID
                 let userName = username
                 let deta = downloadURL.absoluteString
                 let comment = self.contentTF.text
+                let icon = userIcon
 
 
 
                 let data = [
                             "userID": userID,
                             "userName": userName,
-                            "userIcon": userID,
+                            "userIcon": icon,
                             "images": deta,
-                            "content": comment
+                            "content": comment,
+//
                     
                     ]
 

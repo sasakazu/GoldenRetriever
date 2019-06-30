@@ -109,14 +109,12 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
 
        cell.userName.text = messageArray[indexPath.row].username
         
-        
-
 
         let url = NSURL(string: (messageArray[indexPath.row].postImage) as String)
 
         cell.postImage.sd_setImage(with: url as URL?)
-        
-
+      
+  
         return cell
         
         
