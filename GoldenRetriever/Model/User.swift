@@ -14,14 +14,16 @@ class User{
     
     var username: String = ""
     var email:String = ""
+    var uid:String = ""
     var postId:String = ""
 
 
-    init(username: String, email:String, postId:String) {
+    init(username: String, email:String, postId:String, uid:String) {
         
         self.username = username
+        self.email = email
         self.postId = postId
-        self.postId = postId
+        self.uid = uid
         
         
     }

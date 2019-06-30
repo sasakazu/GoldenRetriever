@@ -23,51 +23,71 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
         
       
 
-        let ref = Database.database().reference()
-
-        let userID = Auth.auth().currentUser?.uid
+//        let ref = Database.database().reference()
+//
+//        let userID = Auth.auth().currentUser?.uid
+//        
+//        
+//        
+//        ref.child("users").observe(.value) { (snapshot) in
+//            
+//   
+//            for item in snapshot.children {
+//                
+//                let kkk = item           
+//                let username = kkk["userName"]
+//            
+//            print()
+//        
+//            
+//            }
+//        }
         
-        ref.child("posts").child(userID!).observe(.value) { (snap) in
-            
-            
-            let postDictionary = snap.value as? NSDictionary
-            
-      
-//            print(postDictionary)
-            
-            if postDictionary != nil {
-                
-            
-            
-                for(p) in postDictionary! {
-                
-                let posts = p.value as? NSDictionary
-                
-                
-               guard let username = posts?.value(forKey: "userName") else {return}
-               guard let postImage = posts?.value(forKey: "images") else {return}
-               let newPost = Post(username: username as? String ?? "", postImage: postImage as? String ?? "")
-
-                self.messageArray.append(newPost)
-                
-//                print(postImage)
-                    
+        
+        
+        
+        
+//        ref.child("posts").child(userID!).observe(.value) { (snap) in
+//
+//
+//            let postDictionary = snap.value as? NSDictionary
+//
+//
+////            print(postDictionary)
+//
+//            if postDictionary != nil {
+//
+//
+//
+//                for(p) in postDictionary! {
+//
+//                let posts = p.value as? NSDictionary
+//
+//
+//               guard let username = posts?.value(forKey: "userName") else {return}
+//               guard let postImage = posts?.value(forKey: "images") else {return}
+//               let newPost = Post(username: username as? String ?? "", postImage: postImage as? String ?? "")
+//
+//                self.messageArray.append(newPost)
+//
+////                print(postImage)
+        
                     
                 
                 self.collectionView.reloadData()
 
             
-            }
-                
-            }
+//            }
+        
+//            }
+    
+//            else {
+//
+//                print("error")
+//            }
+        
             
-            else {
-                
-                print("error")
-            }
-            
-            
-        }
+//        }
        
         
         self.collectionView.delegate = self
