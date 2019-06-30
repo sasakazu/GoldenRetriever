@@ -21,75 +21,65 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
+        
+        let ref = Database.database().reference()
 
-//        let ref = Database.database().reference()
-//
-//        let userID = Auth.auth().currentUser?.uid
-//        
-//        
-//        
-//        ref.child("users").observe(.value) { (snapshot) in
-//            
-//   
-//            for item in snapshot.children {
-//                
-//                let kkk = item           
-//                let username = kkk["userName"]
-//            
-//            print()
-//        
-//            
-//            }
-//        }
         
-        
-        
-        
-        
-//        ref.child("posts").child(userID!).observe(.value) { (snap) in
-//
-//
-//            let postDictionary = snap.value as? NSDictionary
-//
-//
-////            print(postDictionary)
-//
-//            if postDictionary != nil {
-//
-//
-//
-//                for(p) in postDictionary! {
-//
-//                let posts = p.value as? NSDictionary
-//
-//
-//               guard let username = posts?.value(forKey: "userName") else {return}
-//               guard let postImage = posts?.value(forKey: "images") else {return}
-//               let newPost = Post(username: username as? String ?? "", postImage: postImage as? String ?? "")
-//
-//                self.messageArray.append(newPost)
-//
-////                print(postImage)
-        
-                    
-                
-                self.collectionView.reloadData()
-
+        ref.child("users").observeSingleEvent(of: .value) { (snap) in
             
-//            }
-        
-//            }
+            for item in snap.children {
+            
+                let snapdata = item as! DataSnapshot
+                //１つのデータ
+//                print(snapdata)
+                let item = snapdata.value as! [String:Any]
     
-//            else {
-//
-//                print("error")
-//            }
+                
+                let getid = item["userID"] as? String
+                
+//                print("id:::\(getid)")
+                
+                
+             let postRef = Database.database().reference()
+                
+                postRef.child("posts").child(getid!).observe(.childAdded) { (snapshot) in
+                
+                
+                    
+                    guard let dict = snapshot.value as? [String: Any] else { return }
+                    
+                    print(dict)
+           
+                    
+                    
+                    guard let memoString = dict["userName"] as? String else { return }
+                    guard let date = dict["images"] as? String else { return }
+                    
+                    guard let getid = dict["userID"] as? String else { return }
+                    
+                    let newPost = Post(username: memoString, postImage: date,getUid: getid)
+                    
+                    self.messageArray.append(newPost)
+                    
+               
+                    self.collectionView.reloadData()
+                
+                }
+                
+                
+                
+                
+                
+
+            }
+
+
+
         
-            
-//        }
-       
+  
+
         
+    }
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         

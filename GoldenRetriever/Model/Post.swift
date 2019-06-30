@@ -14,13 +14,14 @@ class Post{
     var username: String = ""
     var postImage:String = ""
     var postId:String = ""
+    var getUid:String = ""
     
     
-    init(username: String, postImage: String) {
+    init(username: String, postImage: String, getUid:String) {
         
         self.username = username
         self.postImage = postImage
-      
+        self.getUid = getUid
         
         
     }

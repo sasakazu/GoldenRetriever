@@ -78,31 +78,14 @@ class acountMain: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             
             guard let memoString = dict["userName"] as? String else { return }
             guard let date = dict["images"] as? String else { return }
+            
+             guard let getid = dict["userID"] as? String else { return }
 
-            let newPost = Post(username: memoString, postImage: date)
+            let newPost = Post(username: memoString, postImage: date,getUid: getid)
             
             self.myFeed.append(newPost)
             
-            print(newPost)
-            
-//            let postDictionary = snap.value as? NSDictionary
-//
-//            print(postDictionary)
-//
-//            for p in postDictionary! {
-//
-//                    let posts = p.value as? NSDictionary
-//
-//
-//                    guard let username = posts?.value(forKey: "userName") else {return}
-//                    guard let postImage = posts?.value(forKey: "images") else {return}
-//                    let newPost = Post(username: username as? String ?? "", postImage: postImage as? String ?? "")
-//
-//                    self.myFeed.append(newPost)
-//
-//                    print(postImage)
-//
-//
+
                     self.collectionView.reloadData()
 
 
