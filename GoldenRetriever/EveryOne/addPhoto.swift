@@ -26,9 +26,7 @@ UINavigationControllerDelegate {
         self.contentTF.delegate = self
         
         
-        let image = UIImage(named: "fff")
-        imageView.image = image
-
+        
         
     }
     
@@ -162,27 +160,35 @@ UINavigationControllerDelegate {
               
                 
                 let username = dictionaly?["userName"] as? String ?? ""
-                let dogname = dictionaly?["dogName"] as? String ?? ""
+//                let dogname = dictionaly?["dogName"] as? String ?? ""
                 let userIcon = dictionaly?["userIcon"] as? String ?? ""
+                
+                    
+                let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyyMMddHH:mm"
 
+                    
+                let dateString = dateFormatter.string(from: Date())
+               
+                
                     
                 let userID = userID
                 let userName = username
                 let deta = downloadURL.absoluteString
                 let comment = self.contentTF.text
                 let icon = userIcon
-
+                let postDate = dateString
 
 
                 let data = [
-                            "userID": userID,
+                    "userID": userID!,
                             "userName": userName,
                             "userIcon": icon,
                             "images": deta,
-                            "content": comment,
-//
+                            "content": comment as Any,
+                            "date": postDate
                     
-                    ]
+                    ] as [String : Any]
 
                     ref.child("posts").child(userID!).childByAutoId().setValue(data as [AnyHashable : Any])
 
@@ -219,6 +225,8 @@ UINavigationControllerDelegate {
         return true
         
     }
+
+    
 
     
     

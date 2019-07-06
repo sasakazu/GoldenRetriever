@@ -15,14 +15,15 @@ class Post{
     var postImage:String = ""
     var postId:String = ""
     var getUid:String = ""
+    var userIcon:String = ""
     
     
-    init(username: String, postImage: String, getUid:String) {
+    init(username: String, postImage: String, getUid:String, userIcon: String) {
         
         self.username = username
         self.postImage = postImage
         self.getUid = getUid
-        
+        self.userIcon = userIcon
         
     }
     

@@ -25,8 +25,8 @@ UINavigationControllerDelegate {
         
         dogNameTF.delegate = self
         
-        let image = UIImage(named: "fff")
-        userIcon.image = image
+//        let image = UIImage(named: "fff")
+//        userIcon.image = image
         
         var ref: DatabaseReference!
         ref = Database.database().reference()
@@ -38,19 +38,18 @@ UINavigationControllerDelegate {
             let value = snapshot.value as? NSDictionary
             let username = value?["userName"] as? String ?? ""
             let dogname = value?["dogName"] as? String ?? ""
+            let userIcon = value?["userIcon"] as? String ?? ""
+            
             
             self.userNameTF.text = username
             self.dogNameTF.text = dogname
+            let url = NSURL(string: (userIcon) as String)
+            self.userIcon.sd_setImage(with: url as URL?)
             
-            
-         
-                
+            self.userIcon.layer.cornerRadius = 60.0
             
         })
-            
-
-        
-       
+  
   
     }
     
@@ -145,11 +144,7 @@ UINavigationControllerDelegate {
                     // Uh-oh, an error occurred!
                     return
                 }
-                
-            
-                
-        
-        
+
         
        if let currentUser = Auth.auth().currentUser {
         
@@ -175,7 +170,9 @@ UINavigationControllerDelegate {
             }
         
     }
+    
     }
+    
     
     @IBAction func logout(_ sender: Any) {
         

@@ -21,9 +21,11 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+      
         
         let ref = Database.database().reference()
-
+        
+     
         
         ref.child("users").observeSingleEvent(of: .value) { (snap) in
             
@@ -48,7 +50,9 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
                     
                     guard let dict = snapshot.value as? [String: Any] else { return }
                     
-                    print(dict)
+//                    print(dict)
+                    
+
            
                     
                     
@@ -57,7 +61,9 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
                     
                     guard let getid = dict["userID"] as? String else { return }
                     
-                    let newPost = Post(username: memoString, postImage: date,getUid: getid)
+                     guard let userIcon = dict["userIcon"] as? String else { return }
+                    
+                    let newPost = Post(username: memoString, postImage: date,getUid: getid,userIcon: userIcon)
                     
                     self.messageArray.append(newPost)
                     
@@ -66,7 +72,7 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
                 
                 }
                 
-                
+               
                 
                 
                 
@@ -110,10 +116,17 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
        cell.userName.text = messageArray[indexPath.row].username
         
 
-        let url = NSURL(string: (messageArray[indexPath.row].postImage) as String)
+        let postImageUrl = NSURL(string: (messageArray[indexPath.row].postImage) as String)
 
-        cell.postImage.sd_setImage(with: url as URL?)
+        cell.postImage.sd_setImage(with: postImageUrl as URL?)
       
+        let userIconUrl = NSURL(string: (messageArray[indexPath.row].userIcon) as String)
+        
+        cell.userIcon.sd_setImage(with: userIconUrl as URL?)
+        
+        cell.userIcon.layer.cornerRadius = 30.0
+
+        
   
         return cell
         
