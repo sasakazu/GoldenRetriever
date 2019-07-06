@@ -76,7 +76,9 @@ class acountMain: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             guard let getid = dict["userID"] as? String else { return }
             
             guard let userIcon = dict["userIcon"] as? String else { return }
-            let newPost = Post(username: memoString, postImage: date,getUid: getid, userIcon: userIcon )
+            guard let likeCount = dict["likeCount"] as? Int else { return }
+            
+            let newPost = Post(username: memoString, postImage: date,getUid: getid, userIcon: userIcon, likeCount:  likeCount)
             
             self.myFeed.append(newPost)
             

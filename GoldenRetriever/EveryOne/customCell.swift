@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class customCell: UICollectionViewCell {
+    
+//    var count:Int = 0
     
     
     @IBOutlet weak var userIcon: UIImageView!
@@ -17,8 +20,30 @@ class customCell: UICollectionViewCell {
     @IBOutlet weak var contents: UILabel!
     
     
+    @IBOutlet weak var heart: UIButton!
+    
+    @IBOutlet weak var label: UILabel!
     
     
     
+    
+    
+    @IBAction func heartTapped(_ sender: Any) {
+
+
+
+
+
+
+//        countLabel.text = "0"
+//
+//        self.count += 1
+//
+//        self.countLabel.text = String(self.count)
+
+        }
+   
+
+ 
     
 }

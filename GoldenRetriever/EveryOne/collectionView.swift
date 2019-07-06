@@ -15,8 +15,11 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     var messageArray = [Post]()
     
+  
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +66,9 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
                     
                      guard let userIcon = dict["userIcon"] as? String else { return }
                     
-                    let newPost = Post(username: memoString, postImage: date,getUid: getid,userIcon: userIcon)
+                    guard let likeCount = dict["likeCount"] as? Int else { return }
+                    
+                    let newPost = Post(username: memoString, postImage: date,getUid: getid,userIcon: userIcon, likeCount: likeCount)
                     
                     self.messageArray.append(newPost)
                     
@@ -125,16 +130,33 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.userIcon.sd_setImage(with: userIconUrl as URL?)
         
         cell.userIcon.layer.cornerRadius = 30.0
+        
+        
 
+        
         
   
         return cell
         
         
     }
- 
     
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+//        count += 1
+//
+//        countLabel.text = String(count)
+//
+    }
  
+
+
+
+    
+    
     
     
     

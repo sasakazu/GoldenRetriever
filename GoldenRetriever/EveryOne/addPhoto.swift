@@ -178,6 +178,7 @@ UINavigationControllerDelegate {
                 let comment = self.contentTF.text
                 let icon = userIcon
                 let postDate = dateString
+                let likeCount = 0
 
 
                 let data = [
@@ -186,7 +187,8 @@ UINavigationControllerDelegate {
                             "userIcon": icon,
                             "images": deta,
                             "content": comment as Any,
-                            "date": postDate
+                            "date": postDate,
+                            "likeCount": likeCount
                     
                     ] as [String : Any]
 
