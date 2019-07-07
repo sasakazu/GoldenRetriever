@@ -18,12 +18,15 @@ UINavigationControllerDelegate {
     
     @IBOutlet weak var contentTF: UITextField!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var postBtn: UIButton!
     
   
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.contentTF.delegate = self
+        imageView.layer.cornerRadius = 10.0
+        postBtn.layer.cornerRadius = 5.0
         
         
         

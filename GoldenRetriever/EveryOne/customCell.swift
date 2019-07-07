@@ -21,28 +21,11 @@ class customCell: UICollectionViewCell {
     
     
     @IBOutlet weak var heart: UIButton!
-    
     @IBOutlet weak var label: UILabel!
     
+    @IBOutlet weak var testTF: UITextField!
     
     
-    
-    
-    @IBAction func heartTapped(_ sender: Any) {
-
-
-
-
-
-
-//        countLabel.text = "0"
-//
-//        self.count += 1
-//
-//        self.countLabel.text = String(self.count)
-
-        }
-   
 
  
     

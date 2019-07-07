@@ -19,14 +19,18 @@ UINavigationControllerDelegate {
     @IBOutlet weak var dogNameTF: UITextField!
     @IBOutlet weak var userIcon: UIImageView!
     
-
+    @IBOutlet weak var choiceFile: UIButton!
+    @IBOutlet weak var updateBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dogNameTF.delegate = self
         
-//        let image = UIImage(named: "fff")
-//        userIcon.image = image
+        choiceFile.layer.cornerRadius = 2.0
+        updateBtn.layer.cornerRadius = 5.0
+        
+        
         
         var ref: DatabaseReference!
         ref = Database.database().reference()

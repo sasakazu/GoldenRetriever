@@ -90,7 +90,7 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
   
 
         
-    }
+        }
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
@@ -131,7 +131,10 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         cell.userIcon.layer.cornerRadius = 30.0
         
+        cell.label.text = messageArray[indexPath.row].likeCount.description
         
+//        cell.heart.addTarget(self, action: #selector(buttonEvent(_:)), for: UIControl.Event.touchUpInside)
+
 
         
         
@@ -141,23 +144,33 @@ class collectionView: UIViewController, UICollectionViewDelegate, UICollectionVi
         
     }
     
+
     
+    @objc func buttonEvent(_ sender: UIButton) {
+        
+        
+   
+        
+        
+        
+        
+        
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-//        count += 1
-//
-//        countLabel.text = String(count)
-//
+        
+        
     }
+
+
+    
+        
+    
+    
+
  
 
-
-
-    
-    
-    
-    
     
 }

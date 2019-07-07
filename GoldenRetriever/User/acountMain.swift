@@ -22,6 +22,8 @@ class acountMain: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var dogNameLabel: UILabel!
+    @IBOutlet weak var editBtn: UIButton!
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -35,6 +37,7 @@ class acountMain: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
 
         self.image.layer.cornerRadius = 50.0
+        self.editBtn.layer.cornerRadius = 2.0
    
         
         var ref: DatabaseReference!
